@@ -56,9 +56,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 .grupo-table tr.classificado td:first-child{border-left:2px solid var(--gb)}
 .grupo-table tr.playoff-vaga td:first-child{border-left:2px solid var(--gold)}
 .pos-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;font-size:11px;font-weight:600;margin-right:6px}
-.pos-1{background:rgba(245,158,11,.2);color:var(--gold)}
-.pos-2{background:rgba(148,163,184,.15);color:var(--silver)}
-.pos-3{background:rgba(205,124,47,.15);color:var(--bronze)}
+.pos-1{background:rgba(245,158,11,.2);color:var(--gold)}.pos-2{background:rgba(148,163,184,.15);color:var(--silver)}.pos-3{background:rgba(205,124,47,.15);color:var(--bronze)}
 .jogos-title{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .jogos-list{display:flex;flex-direction:column;gap:6px}
 .jogo-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -70,8 +68,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 .score-input{width:36px;height:28px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;font-weight:600;text-align:center;outline:none;font-family:'DM Sans',sans-serif;display:none}
 .score-sep-admin{font-size:13px;color:var(--muted);display:none}
 .btn-save{font-size:11px;font-weight:600;padding:4px 10px;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'DM Sans',sans-serif;display:none}
-.btn-save:hover{border-color:#555;color:var(--text)}
-.btn-save.saved{border-color:var(--gb);color:#86EFAC}
+.btn-save:hover{border-color:#555;color:var(--text)}.btn-save.saved{border-color:var(--gb);color:#86EFAC}
 .jogo-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .ga-jogo{background:var(--ga)}.gb-jogo{background:var(--gb)}.gc-jogo{background:var(--gc)}
 body.is-admin .score-input{display:inline-block}
@@ -90,19 +87,20 @@ body.is-admin .score-display{display:none}
 .bracket-jogos{padding:12px 16px;display:flex;flex-direction:column;gap:8px}
 .bracket-jogo{display:flex;align-items:stretch;gap:10px;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)}
 .bracket-times{flex:1;display:flex;flex-direction:column;gap:4px}
-.bracket-time{display:flex;align-items:center;font-size:13px;padding:2px 0}
+.bracket-time{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:3px 0}
 .bracket-time-name{font-weight:500;color:var(--text)}
 .bracket-time-name.tbd{color:var(--muted);font-style:italic;font-weight:400}
+.bracket-time-score{font-size:14px;font-weight:700;min-width:20px;text-align:right}
+.bracket-time.winner .bracket-time-name{color:#86EFAC}
+.bracket-time.winner .bracket-time-score{color:#86EFAC}
 .bracket-divider{height:1px;background:var(--border);margin:2px 0}
-.bracket-scores{display:flex;flex-direction:column;gap:4px;align-items:flex-end;justify-content:center;min-width:50px}
-.b-score{font-size:14px;font-weight:600;min-width:20px;text-align:right;padding:2px 0}
-.b-input{width:36px;height:26px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;font-weight:600;text-align:center;outline:none;font-family:'DM Sans',sans-serif;display:none}
-.bracket-save{font-size:11px;font-weight:600;padding:6px 12px;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'DM Sans',sans-serif;align-self:center;display:none}
-.bracket-save:hover{border-color:#555;color:var(--text)}
-.bracket-save.saved{border-color:var(--gb);color:#86EFAC}
-body.is-admin .b-input{display:block}
+.bracket-actions{display:flex;flex-direction:column;gap:6px;align-items:flex-end;justify-content:center;min-width:80px}
+.b-inputs{display:none;flex-direction:column;gap:4px;align-items:flex-end}
+.b-input{width:36px;height:26px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;font-weight:600;text-align:center;outline:none;font-family:'DM Sans',sans-serif}
+.bracket-save{font-size:11px;font-weight:600;padding:5px 10px;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'DM Sans',sans-serif;align-self:center;display:none}
+.bracket-save:hover{border-color:#555;color:var(--text)}.bracket-save.saved{border-color:var(--gb);color:#86EFAC}
+body.is-admin .b-inputs{display:flex}
 body.is-admin .bracket-save{display:block}
-body.is-admin .b-score{display:none}
 .legenda{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1rem}
 .leg-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
 .leg-bar{width:12px;height:3px;border-radius:2px}
@@ -120,26 +118,21 @@ body.is-admin .b-score{display:none}
     <div class="lock-err" id="lockErr"></div>
   </div>
 </div>
-
 <div class="admin-bar hidden" id="adminBar">
   <span class="admin-label">&#9679; Modo Admin ativo</span>
   <button class="admin-out" onclick="logout()">Sair do admin</button>
 </div>
 <div class="admin-hint" onclick="adminClick()"></div>
-
 <div class="sync-bar"><div class="sync-dot" id="syncDot"></div><span id="syncMsg">Conectando...</span></div>
-
 <div class="header">
   <h1>Torneio de Futevôlei</h1>
   <div class="header-sub">9 duplas &nbsp;·&nbsp; 3 grupos &nbsp;·&nbsp; Início 7h30</div>
 </div>
-
 <div class="tabs">
   <button class="tab active" onclick="showTab('grupos')">Grupos</button>
   <button class="tab" onclick="showTab('resultados')">Resultados</button>
   <button class="tab" onclick="showTab('chaveamento')">Chaveamento</button>
 </div>
-
 <div class="main">
   <div class="section active" id="tab-grupos"><div class="grupos-grid" id="grupos-grid"></div></div>
   <div class="section" id="tab-resultados">
@@ -155,11 +148,11 @@ body.is-admin .b-score{display:none}
   </div>
 </div>
 
-<script type="module">
-import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import{getDatabase,ref,onValue,set}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
-const app=initializeApp({
+<!-- Firebase compat (não usa módulo, funciona com onclick global) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+firebase.initializeApp({
   apiKey:"AIzaSyBefOVeRL4quYe_aNclLMGQDRjmASjml7Y",
   authDomain:"torneio-futevolei.firebaseapp.com",
   databaseURL:"https://torneio-futevolei-default-rtdb.firebaseio.com",
@@ -168,10 +161,10 @@ const app=initializeApp({
   messagingSenderId:"840589787504",
   appId:"1:840589787504:web:1722774e24898a5b144fb5"
 });
-const db=getDatabase(app);
+const db = firebase.database();
 
-const ADMIN_PASSWORD='futevolei2025';
-const DUPLAS=[
+const ADMIN_PASSWORD = 'futevolei2025';
+const DUPLAS = [
   {id:'A1',grupo:'A',nomes:'Bernardo / Matheus'},
   {id:'A2',grupo:'A',nomes:'Fábio / Peu Ferraz'},
   {id:'A3',grupo:'A',nomes:'Guilherme / Pedro'},
@@ -182,74 +175,129 @@ const DUPLAS=[
   {id:'C2',grupo:'C',nomes:'Victor Gabriel / Bute'},
   {id:'C3',grupo:'C',nomes:'MR / Marcus'},
 ];
-const JOGOS=[
+const JOGOS = [
   {num:1,grupo:'A',a:'A1',b:'A2'},{num:2,grupo:'A',a:'A1',b:'A3'},{num:3,grupo:'A',a:'A2',b:'A3'},
   {num:4,grupo:'B',a:'B1',b:'B2'},{num:5,grupo:'B',a:'B1',b:'B3'},{num:6,grupo:'B',a:'B2',b:'B3'},
   {num:7,grupo:'C',a:'C1',b:'C2'},{num:8,grupo:'C',a:'C1',b:'C3'},{num:9,grupo:'C',a:'C2',b:'C3'},
 ];
 
-let resultados={},resultadosFase={};
-let isAdmin=sessionStorage.getItem('fv_admin')==='1';
-let currentTab='grupos';
-let _clicks=0,_timer=null;
+let resultados = {}, resultadosFase = {};
+let isAdmin = sessionStorage.getItem('fv_admin') === '1';
+let currentTab = 'grupos';
+let _c = 0, _t = null;
 
-function syncStatus(ok,msg){
-  document.getElementById('syncDot').className='sync-dot '+(ok?'ok':'err');
-  document.getElementById('syncMsg').textContent=msg;
+function syncStatus(ok, msg) {
+  document.getElementById('syncDot').className = 'sync-dot ' + (ok ? 'ok' : 'err');
+  document.getElementById('syncMsg').textContent = msg;
 }
 
-onValue(ref(db,'resultados'),snap=>{
-  resultados=snap.val()||{};
-  syncStatus(true,'Ao vivo');
+db.ref('resultados').on('value', snap => {
+  resultados = snap.val() || {};
+  syncStatus(true, 'Ao vivo');
   render();
-},()=>syncStatus(false,'Erro de conexão'));
+}, () => syncStatus(false, 'Erro de conexão'));
 
-onValue(ref(db,'resultadosFase'),snap=>{
-  resultadosFase=snap.val()||{};
+db.ref('resultadosFase').on('value', snap => {
+  resultadosFase = snap.val() || {};
   render();
 });
 
-function calcGrupo(g){
-  let st={};
-  DUPLAS.filter(d=>d.grupo===g).forEach(d=>{st[d.id]={id:d.id,nomes:d.nomes,j:0,v:0,sv:0,sp:0,saldo:0};});
-  JOGOS.filter(j=>j.grupo===g).forEach(j=>{
-    let r=resultados[j.num];
-    if(!r||r.sa===''||r.sb===undefined) return;
-    let sa=parseInt(r.sa),sb=parseInt(r.sb);
-    if(isNaN(sa)||isNaN(sb)) return;
-    st[j.a].j++;st[j.b].j++;
-    if(sa>sb){st[j.a].v++;st[j.a].sv++;st[j.b].sp++;}
-    else{st[j.b].v++;st[j.b].sv++;st[j.a].sp++;}
-    st[j.a].saldo+=sa-sb;st[j.b].saldo+=sb-sa;
+// ── CLASSIFICAÇÃO ──
+function calcGrupo(g) {
+  let st = {};
+  DUPLAS.filter(d => d.grupo === g).forEach(d => { st[d.id] = {id:d.id,nomes:d.nomes,j:0,v:0,sv:0,sp:0,saldo:0}; });
+  JOGOS.filter(j => j.grupo === g).forEach(j => {
+    let r = resultados[j.num];
+    if (!r || r.sa === '' || r.sb === undefined) return;
+    let sa = parseInt(r.sa), sb = parseInt(r.sb);
+    if (isNaN(sa) || isNaN(sb)) return;
+    st[j.a].j++; st[j.b].j++;
+    if (sa > sb) { st[j.a].v++; st[j.a].sv++; st[j.b].sp++; }
+    else { st[j.b].v++; st[j.b].sv++; st[j.a].sp++; }
+    st[j.a].saldo += sa - sb; st[j.b].saldo += sb - sa;
   });
-  return Object.values(st).sort((a,b)=>b.v-a.v||b.sv-a.sv||b.saldo-a.saldo);
+  return Object.values(st).sort((a,b) => b.v-a.v || b.sv-a.sv || b.saldo-a.saldo);
 }
-function getPrimeiros(){return[calcGrupo('A')[0],calcGrupo('B')[0],calcGrupo('C')[0]].sort((a,b)=>b.v-a.v||b.sv-a.sv||b.saldo-a.saldo);}
-function getSegundos(){return[calcGrupo('A')[1],calcGrupo('B')[1],calcGrupo('C')[1]].sort((a,b)=>b.v-a.v||b.sv-a.sv||b.saldo-a.saldo);}
-function dn(d){return d&&d.nomes?d.nomes:'A definir';}
+function getPrimeiros() {
+  return [calcGrupo('A')[0], calcGrupo('B')[0], calcGrupo('C')[0]]
+    .sort((a,b) => b.v-a.v || b.sv-a.sv || b.saldo-a.saldo);
+}
+function getSegundos() {
+  return [calcGrupo('A')[1], calcGrupo('B')[1], calcGrupo('C')[1]]
+    .sort((a,b) => b.v-a.v || b.sv-a.sv || b.saldo-a.saldo);
+}
 
-function renderGrupos(){
-  let html='';
-  [['A','ga','Grupo A'],['B','gb','Grupo B'],['C','gc','Grupo C']].forEach(([g,cl,nome])=>{
-    let rows=calcGrupo(g);
-    html+=`<div class="grupo-card ${cl}"><div class="grupo-header"><div class="grupo-dot"></div><span class="grupo-nome">${nome}</span></div>
-    <table class="grupo-table"><thead><tr><th>Dupla</th><th>J</th><th>V</th><th>SV</th><th>SP</th><th>Saldo</th></tr></thead><tbody>`;
-    rows.forEach((d,i)=>{
-      let rc=i===0?'classificado':i===1?'playoff-vaga':'';
-      let pb=i===0?'pos-1':i===1?'pos-2':'pos-3';
-      html+=`<tr class="${rc}"><td><span class="pos-badge ${pb}">${i+1}</span>${d.nomes}</td><td>${d.j}</td><td>${d.v}</td><td>${d.sv}</td><td>${d.sp}</td><td>${d.saldo>=0?'+':''}${d.saldo}</td></tr>`;
+// ── VENCEDOR / PERDEDOR de fase ──
+function vencedorFase(faseId, nomeA, nomeB) {
+  let r = resultadosFase[faseId];
+  if (!r || r.sa === '' || r.sb === undefined) return null;
+  let sa = parseInt(r.sa), sb = parseInt(r.sb);
+  if (isNaN(sa) || isNaN(sb)) return null;
+  return sa > sb ? nomeA : nomeB;
+}
+function perdedorFase(faseId, nomeA, nomeB) {
+  let r = resultadosFase[faseId];
+  if (!r || r.sa === '' || r.sb === undefined) return null;
+  let sa = parseInt(r.sa), sb = parseInt(r.sb);
+  if (isNaN(sa) || isNaN(sb)) return null;
+  return sa > sb ? nomeB : nomeA;
+}
+
+// ── RESOLVE chaveamento automático ──
+function resolveChaveamento() {
+  let p = getPrimeiros(), s = getSegundos();
+  let p1 = p[0]&&p[0].j>0 ? p[0].nomes : null;
+  let p2 = p[1]&&p[1].j>0 ? p[1].nomes : null;
+  let p3 = p[2]&&p[2].j>0 ? p[2].nomes : null;
+  let s1 = s[0]&&s[0].j>0 ? s[0].nomes : null;
+  let s2 = s[1]&&s[1].j>0 ? s[1].nomes : null;
+
+  let plA = s1 || 'A definir', plB = s2 || 'A definir';
+  let plVenc = vencedorFase('playoff', plA, plB);
+
+  let sm1A = p2 || 'A definir', sm1B = p3 || 'A definir';
+  let sm1Venc = vencedorFase('semi1', sm1A, sm1B);
+  let sm1Perd = perdedorFase('semi1', sm1A, sm1B);
+
+  let sm2A = p1 || 'A definir', sm2B = plVenc || 'Vencedor Playoff';
+  let sm2Venc = vencedorFase('semi2', sm2A, sm2B);
+  let sm2Perd = perdedorFase('semi2', sm2A, sm2B);
+
+  return {
+    playoff: {a: plA, b: plB},
+    semi1:   {a: sm1A, b: sm1B},
+    semi2:   {a: sm2A, b: sm2B},
+    terceiro:{a: sm1Perd||'Perdedor Semi 1', b: sm2Perd||'Perdedor Semi 2'},
+    final:   {a: sm1Venc||'Vencedor Semi 1', b: sm2Venc||'Vencedor Semi 2'},
+  };
+}
+
+// ── RENDER GRUPOS ──
+function renderGrupos() {
+  let html = '';
+  [['A','ga','Grupo A'],['B','gb','Grupo B'],['C','gc','Grupo C']].forEach(([g,cl,nome]) => {
+    let rows = calcGrupo(g);
+    html += `<div class="grupo-card ${cl}">
+      <div class="grupo-header"><div class="grupo-dot"></div><span class="grupo-nome">${nome}</span></div>
+      <table class="grupo-table"><thead><tr><th>Dupla</th><th>J</th><th>V</th><th>SV</th><th>SP</th><th>Saldo</th></tr></thead><tbody>`;
+    rows.forEach((d,i) => {
+      let rc = i===0?'classificado':i===1?'playoff-vaga':'';
+      let pb = i===0?'pos-1':i===1?'pos-2':'pos-3';
+      html += `<tr class="${rc}"><td><span class="pos-badge ${pb}">${i+1}</span>${d.nomes}</td>
+        <td>${d.j}</td><td>${d.v}</td><td>${d.sv}</td><td>${d.sp}</td><td>${d.saldo>=0?'+':''}${d.saldo}</td></tr>`;
     });
-    html+=`</tbody></table></div>`;
+    html += `</tbody></table></div>`;
   });
-  document.getElementById('grupos-grid').innerHTML=html;
+  document.getElementById('grupos-grid').innerHTML = html;
 }
 
-function renderResultados(){
-  let dc={A:'ga-jogo',B:'gb-jogo',C:'gc-jogo'};
-  document.getElementById('jogos-list').innerHTML=JOGOS.map(j=>{
-    let r=resultados[j.num]||{sa:'',sb:''};
-    let saved=r.sa!==''&&r.sb!=='';
-    let da=DUPLAS.find(d=>d.id===j.a),db2=DUPLAS.find(d=>d.id===j.b);
+// ── RENDER RESULTADOS ──
+function renderResultados() {
+  let dc = {A:'ga-jogo',B:'gb-jogo',C:'gc-jogo'};
+  document.getElementById('jogos-list').innerHTML = JOGOS.map(j => {
+    let r = resultados[j.num] || {sa:'',sb:''};
+    let saved = r.sa !== '' && r.sb !== '';
+    let da = DUPLAS.find(d=>d.id===j.a), db2 = DUPLAS.find(d=>d.id===j.b);
     return `<div class="jogo-item">
       <div class="jogo-dot ${dc[j.grupo]}"></div>
       <span class="jogo-num">Jogo ${j.num} · Gr.${j.grupo}</span>
@@ -264,97 +312,122 @@ function renderResultados(){
   }).join('');
 }
 
-window.saveResult=function(num){
-  if(!isAdmin)return;
-  let sa=document.getElementById('sa-'+num).value,sb=document.getElementById('sb-'+num).value;
-  if(sa===''||sb==='')return;
+function saveResult(num) {
+  if (!isAdmin) return;
+  let sa = document.getElementById('sa-'+num).value;
+  let sb = document.getElementById('sb-'+num).value;
+  if (sa===''||sb==='') return;
   syncStatus(false,'Salvando...');
-  set(ref(db,'resultados/'+num),{sa,sb}).then(()=>syncStatus(true,'Ao vivo')).catch(()=>syncStatus(false,'Erro ao salvar'));
-};
+  db.ref('resultados/'+num).set({sa,sb})
+    .then(() => syncStatus(true,'Ao vivo'))
+    .catch(() => syncStatus(false,'Erro ao salvar'));
+}
 
-function faseBloco(faseId,tagClass,tagLabel,titulo,nomeA,nomeB){
-  let r=resultadosFase[faseId]||{sa:'',sb:''};
-  let saved=r.sa!==''&&r.sb!=='';
-  let tA=nomeA.includes('Vencedor')||nomeA.includes('Perdedor')||nomeA==='A definir';
-  let tB=nomeB.includes('Vencedor')||nomeB.includes('Perdedor')||nomeB==='A definir';
+// ── RENDER CHAVEAMENTO ──
+function faseBloco(faseId, tagClass, tagLabel, titulo, nomeA, nomeB) {
+  let r = resultadosFase[faseId] || {sa:'',sb:''};
+  let saved = r.sa !== '' && r.sb !== '';
+  let sa = saved ? parseInt(r.sa) : null;
+  let sb = saved ? parseInt(r.sb) : null;
+  let aWin = saved && sa > sb, bWin = saved && sb > sa;
+  let tA = nomeA==='A definir'||nomeA.startsWith('Vencedor')||nomeA.startsWith('Perdedor');
+  let tB = nomeB==='A definir'||nomeB.startsWith('Vencedor')||nomeB.startsWith('Perdedor');
   return `<div class="bracket-fase">
-    <div class="bracket-fase-header"><span class="fase-tag ${tagClass}">${tagLabel}</span><span class="bracket-fase-title">${titulo}</span></div>
+    <div class="bracket-fase-header">
+      <span class="fase-tag ${tagClass}">${tagLabel}</span>
+      <span class="bracket-fase-title">${titulo}</span>
+    </div>
     <div class="bracket-jogos"><div class="bracket-jogo">
       <div class="bracket-times">
-        <div class="bracket-time"><span class="bracket-time-name ${tA?'tbd':''}">${nomeA}</span></div>
+        <div class="bracket-time ${aWin?'winner':''}">
+          <span class="bracket-time-name ${tA?'tbd':''}">${nomeA}</span>
+          ${saved?`<span class="bracket-time-score">${r.sa}</span>`:''}
+        </div>
         <div class="bracket-divider"></div>
-        <div class="bracket-time"><span class="bracket-time-name ${tB?'tbd':''}">${nomeB}</span></div>
+        <div class="bracket-time ${bWin?'winner':''}">
+          <span class="bracket-time-name ${tB?'tbd':''}">${nomeB}</span>
+          ${saved?`<span class="bracket-time-score">${r.sb}</span>`:''}
+        </div>
       </div>
-      <div class="bracket-scores">
-        <span class="b-score" style="color:${saved?'var(--text)':'var(--muted)'}">${saved?r.sa:'–'}</span>
-        <input class="b-input" type="number" min="0" max="99" value="${r.sa}" placeholder="0" id="bsa-${faseId}">
-        <div style="height:1px;background:var(--border);width:100%;margin:2px 0"></div>
-        <span class="b-score" style="color:${saved?'var(--text)':'var(--muted)'}">${saved?r.sb:'–'}</span>
-        <input class="b-input" type="number" min="0" max="99" value="${r.sb}" placeholder="0" id="bsb-${faseId}">
+      <div class="bracket-actions">
+        <div class="b-inputs">
+          <input class="b-input" type="number" min="0" max="99" value="${r.sa||''}" placeholder="0" id="bsa-${faseId}">
+          <div style="height:1px;background:var(--border);width:36px;margin:1px 0"></div>
+          <input class="b-input" type="number" min="0" max="99" value="${r.sb||''}" placeholder="0" id="bsb-${faseId}">
+        </div>
+        <button class="bracket-save ${saved?'saved':''}" onclick="saveFase('${faseId}')">${saved?'Salvo':'Salvar'}</button>
       </div>
-      <button class="bracket-save ${saved?'saved':''}" onclick="saveFase('${faseId}')">${saved?'Salvo':'Salvar'}</button>
     </div></div></div>`;
 }
 
-function renderChaveamento(){
-  let p=getPrimeiros(),s=getSegundos();
-  let p1=p[0],p2=p[1],p3=p[2],s1=s[0],s2=s[1];
-  let html='';
-  html+=faseBloco('playoff','tag-playoff','Playoff','Melhor 2º × 2º Melhor 2º lugar',s1&&s1.j>0?dn(s1):'A definir',s2&&s2.j>0?dn(s2):'A definir');
-  html+=faseBloco('semi1','tag-semi','Semi 1','2º melhor 1º × 3º melhor 1º',p2&&p2.j>0?dn(p2)+' (2º geral)':'A definir',p3&&p3.j>0?dn(p3)+' (3º geral)':'A definir');
-  html+=faseBloco('semi2','tag-semi','Semi 2','1º geral × Vencedor do playoff',p1&&p1.j>0?dn(p1)+' (1º geral)':'A definir','Vencedor do Playoff');
-  html+=faseBloco('terceiro','tag-terceiro','3º Lugar','Disputa do terceiro lugar','Perdedor Semi 1','Perdedor Semi 2');
-  html+=faseBloco('final','tag-final','Final','Grande final','Vencedor Semi 1','Vencedor Semi 2');
-  document.getElementById('bracket').innerHTML=html;
+function renderChaveamento() {
+  let ch = resolveChaveamento();
+  let html = '';
+  html += faseBloco('playoff','tag-playoff','Playoff','Melhor 2º × 2º Melhor 2º lugar',ch.playoff.a,ch.playoff.b);
+  html += faseBloco('semi1','tag-semi','Semi 1','2º melhor 1º × 3º melhor 1º',ch.semi1.a,ch.semi1.b);
+  html += faseBloco('semi2','tag-semi','Semi 2','1º geral × Vencedor do Playoff',ch.semi2.a,ch.semi2.b);
+  html += faseBloco('terceiro','tag-terceiro','3º Lugar','Disputa do terceiro lugar',ch.terceiro.a,ch.terceiro.b);
+  html += faseBloco('final','tag-final','Final','Grande final',ch.final.a,ch.final.b);
+  document.getElementById('bracket').innerHTML = html;
 }
 
-window.saveFase=function(faseId){
-  if(!isAdmin)return;
-  let sa=document.getElementById('bsa-'+faseId).value,sb=document.getElementById('bsb-'+faseId).value;
-  if(sa===''||sb==='')return;
+function saveFase(faseId) {
+  if (!isAdmin) return;
+  let sa = document.getElementById('bsa-'+faseId).value;
+  let sb = document.getElementById('bsb-'+faseId).value;
+  if (sa===''||sb==='') return;
   syncStatus(false,'Salvando...');
-  set(ref(db,'resultadosFase/'+faseId),{sa,sb}).then(()=>syncStatus(true,'Ao vivo')).catch(()=>syncStatus(false,'Erro ao salvar'));
-};
+  db.ref('resultadosFase/'+faseId).set({sa,sb})
+    .then(() => syncStatus(true,'Ao vivo'))
+    .catch(() => syncStatus(false,'Erro ao salvar'));
+}
 
-window.showTab=function(t){
-  currentTab=t;
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+// ── TABS ──
+function showTab(t) {
+  currentTab = t;
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-'+t).classList.add('active');
-  ({grupos:'Grupos',resultados:'Resultados',chaveamento:'Chaveamento'});
-  document.querySelectorAll('.tab').forEach(b=>{if(b.textContent.trim()==={grupos:'Grupos',resultados:'Resultados',chaveamento:'Chaveamento'}[t])b.classList.add('active');});
+  let labels = {grupos:'Grupos',resultados:'Resultados',chaveamento:'Chaveamento'};
+  document.querySelectorAll('.tab').forEach(b => { if(b.textContent.trim()===labels[t]) b.classList.add('active'); });
   render();
-};
+}
 
-function render(){
-  if(currentTab==='grupos')renderGrupos();
-  else if(currentTab==='resultados')renderResultados();
+function render() {
+  if (currentTab==='grupos') renderGrupos();
+  else if (currentTab==='resultados') renderResultados();
   else renderChaveamento();
 }
 
-let _c=0,_t=null;
-window.adminClick=function(){
-  _c++;clearTimeout(_t);_t=setTimeout(()=>_c=0,2000);
-  if(_c>=5){_c=0;if(!isAdmin)document.getElementById('lockOverlay').classList.remove('hidden');}
-};
-window.tryLogin=function(){
-  let v=document.getElementById('lockInput').value;
-  if(v===ADMIN_PASSWORD){
-    isAdmin=true;sessionStorage.setItem('fv_admin','1');
+// ── ADMIN ──
+function adminClick() {
+  _c++; clearTimeout(_t); _t = setTimeout(()=>_c=0, 2000);
+  if (_c>=5) { _c=0; if(!isAdmin) document.getElementById('lockOverlay').classList.remove('hidden'); }
+}
+function tryLogin() {
+  let v = document.getElementById('lockInput').value;
+  if (v===ADMIN_PASSWORD) {
+    isAdmin=true; sessionStorage.setItem('fv_admin','1');
     document.getElementById('lockOverlay').classList.add('hidden');
     document.getElementById('lockInput').value='';
     document.getElementById('lockErr').textContent='';
     document.getElementById('adminBar').classList.remove('hidden');
-    document.body.classList.add('is-admin');render();
-  }else{document.getElementById('lockErr').textContent='Senha incorreta.';document.getElementById('lockInput').value='';}
-};
-window.logout=function(){
-  isAdmin=false;sessionStorage.removeItem('fv_admin');
+    document.body.classList.add('is-admin'); render();
+  } else {
+    document.getElementById('lockErr').textContent='Senha incorreta.';
+    document.getElementById('lockInput').value='';
+  }
+}
+function logout() {
+  isAdmin=false; sessionStorage.removeItem('fv_admin');
   document.getElementById('adminBar').classList.add('hidden');
-  document.body.classList.remove('is-admin');render();
-};
+  document.body.classList.remove('is-admin'); render();
+}
 
-if(isAdmin){document.body.classList.add('is-admin');document.getElementById('adminBar').classList.remove('hidden');}
+if (isAdmin) {
+  document.body.classList.add('is-admin');
+  document.getElementById('adminBar').classList.remove('hidden');
+}
 </script>
 </body>
 </html>
